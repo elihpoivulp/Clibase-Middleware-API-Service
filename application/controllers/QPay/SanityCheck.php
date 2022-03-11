@@ -1,6 +1,6 @@
 <?php
 
-trait ValidationMethods
+trait SanityCheck
 {
 	protected $fv;
 
@@ -105,5 +105,4 @@ trait ValidationMethods
 	{
 		return strlen($string) > $max;
 	}
-
 }

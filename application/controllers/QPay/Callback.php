@@ -10,7 +10,7 @@ require 'ValidationMethods.php';
 class Callback extends RestController
 {
 
-	use ValidationMethods;
+	use SanityCheck;
 
 	private $qpay_api_base_url = 'https://api-test.qpay.ph';
 	private $qpay_secret = 'a764ab66d38444f46e625565854fd197';
@@ -24,7 +24,7 @@ class Callback extends RestController
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('Qpay_Transaction', 'transaction');
-		$this->load->library(array('form_validation'));
+		$this->load->library('form_validation');
 		$this->fv =& $this->form_validation;
 	}
 

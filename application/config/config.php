@@ -457,8 +457,7 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_regenerate' = Regenerate token on every submission
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
-//$config['csrf_protection'] = !strpos($_SERVER['REQUEST_URI'], '/qpay/api/') > 0;
-$config['csrf_protection'] = false;
+$config['csrf_protection'] = !strpos($_SERVER['REQUEST_URI'], '/qpay/api/') > 0;
 $config['csrf_token_name'] = '_csrf';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;

@@ -1,22 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require 'ValidationMethods.php';
+require 'SanityCheck.php';
 
 class QPay extends CI_Controller {
 
-	use ValidationMethods;
+	use SanityCheck;
 
 	private $service_api_base_url = 'service/qpay/api';
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->fv =& $this->form_validation;
+	}
 
 	public function index()
 	{
 		$has_error = false;
-		if ($this->input->method(true)) {
-			$this->load->helper('security');
+		if ($this->input->post()) {
 			$this->load->library('form_validation');
-
-			$this->fv =& $this->form_validation;
 
 			if ($this->form_validation->run('generate_order_rules')) {
 				$curl = curl_init();

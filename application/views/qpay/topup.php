@@ -53,14 +53,20 @@
 				</div>
 				<div class="field mb-2">
 					<div class="ui right labeled input">
-						<input type="text" placeholder="Amount" name="amount" value="<?php echo set_value('amount'); ?>" required>
-						<input type="hidden" name="currency" value="php" required>
-						<div class="ui dropdown label" id="currency_selection">
-							<div class="text" id="selected_currency">PHP</div>
-							<i class="dropdown icon"></i>
-							<div class="menu">
-								<div class="item">PHP</div>
-								<div class="item">USD</div>
+						<div class="ui left corner labeled input">
+							<label for="amount" class="hidden">Amount</label>
+							<input type="text" placeholder="Amount" name="amount" id="amount" value="<?php echo set_value('amount'); ?>" required>
+							<div class="ui left corner label">
+								<i class="asterisk icon"></i>
+							</div>
+							<input type="hidden" name="currency" value="php" required>
+							<div class="ui dropdown label" id="currency_selection" style="margin-left: -50px;">
+								<div class="text" id="selected_currency">PHP</div>
+								<i class="dropdown icon"></i>
+								<div class="menu">
+									<div class="item">PHP</div>
+									<div class="item">USD</div>
+								</div>
 							</div>
 						</div>
 					</div>
